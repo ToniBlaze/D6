@@ -1,0 +1,144 @@
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 700,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.card {
+    width: 310px;
+    height: 360px;
+    overflow: hidden;  
+    border-radius: 10px; 
+    box-shadow: 8px 4px 6px rgba(0, 0, 0, .3);
+
+    min-width: 310px;
+    min-height: 360px;
+    
+    margin: 10% auto;
+    position: relative;
+
+    user-select: none;
+}
+
+.card img {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+} 
+
+.text {
+  position: absolute;
+  color: white;
+  z-index: 3;
+  bottom: 10px;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.text h3, .text p {
+  margin: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.2rem;
+}
+
+.card .album {
+  font-size: 0.5rem;
+}
+
+.card .artist {
+  font-size: 1rem;
+}
+
+.opacity {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: linear-gradient(0deg, rgba(0,0,0) 0%, rgba(0,0,0,0) 42%);
+}
+
+/* BOTTONE */
+
+.play-button {
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  background-color: green;
+  border-radius: 50%;
+  
+  z-index: 4;
+  opacity: 0;
+  bottom: 1rem;
+  left: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateX(-50px);
+
+}
+
+.play-button i {
+  font-size: 1.5rem;
+}
+
+.heart {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background-color: red;
+  border-radius: 50%;
+  top: 1rem;
+  right: 1rem;
+  z-index: 4;
+  font-size: 1.5rem;
+
+  transform: translateY(-80px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* HOVER */
+
+.card:hover {
+  box-shadow: 16px 10px 15px rgba(0, 0, 0, .3);
+}
+
+/* TRANSLATE PLAY BUTTON */
+.card:hover .play-button {
+  transform: translateX(0);
+  opacity: 1;
+
+  transition: opacity .3s, transform .3s;
+  transition-timing-function: cubic-bezier(.81,.05,.58,.85);
+}
+
+/* TRANSLATE TEXT*/
+.card:hover .text {
+  transform: translateX(100%);
+  opacity: 0;
+
+  transition: opacity .3s, transform .3s;
+  transition-timing-function: cubic-bezier(.81,.05,.58,.85);
+}
+
+.card:hover .heart {
+  transform: translateY(0);
+  opacity: 1;
+
+  transition: opacity .3s, transform .3s;
+  transition-timing-function: cubic-bezier(.81,.05,.58,.85);
+}
